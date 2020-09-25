@@ -10,3 +10,25 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+document.querySelector('#google-sgn-btn').addEventListener('click', function () {
+
+    var provider =new firebase.auth.GoogleAuthProvider();
+
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+        //console.log(result);
+        console.log(result.additionalUserInfo.profile.name);
+        console.log(result.additionalUserInfo.profile.picture);
+        window.localStorage.setItem("name",result.additionalUserInfo.profile.name);
+        window.localStorage.setItem("picture",result.additionalUserInfo.profile.picture);
+
+        window.location.href = 'home.html';
+
+
+    }).catch(function(error) {
+        console.log("Login Failed");
+
+    });
+
+})
+
