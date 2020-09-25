@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Finnman Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+
+    <nav class="navbar bg_nav">
+        <h2 class="navbar-brand text-white">Finnman</h2>
+    </nav>
+
+    <div id="result">
+
+    </div>
+
+    <img id="profile_img" src="">
+
+    <script>
+        document.querySelector('#result').innerHTML = localStorage.getItem('name');
+        document.querySelector('#profile_img').setAttribute("src",localStorage.getItem('picture'));
+        //document.querySelector('#profile_img').innerHTML = `<img src="${localStorage.getItem('picture')}">`;
+    </script>
 
 </body>
 </html>
